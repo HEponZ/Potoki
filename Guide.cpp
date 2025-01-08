@@ -16,8 +16,7 @@ void Guide::Add()
 
 	if (!stream)
 	{
-		cout << "Не удалось открыть файл\n";
-		return;
+		throw logic_error("Не удалось открыть файл\n");
 	}
 
 	stream << firm_name << "\n" << owner << "\n" << phone << "\n" << address << "\n" << activity << "\n";
@@ -26,6 +25,11 @@ void Guide::Add()
 void Guide::print()
 {
 	fstream stream(PATH, ios::in);
+
+	if (!stream)
+	{
+		throw logic_error("Не удалось открыть файл\n");
+	}
 
 	while (!stream.eof())
 	{
@@ -43,6 +47,10 @@ void Guide::print()
 void Guide::Search_name(string buf)
 {
 	fstream stream(PATH, ios::in);
+	if (!stream)
+	{
+		throw logic_error("Не удалось открыть файл\n");
+	}
 
 	while (!stream.eof())
 	{
@@ -67,6 +75,10 @@ void Guide::Search_name(string buf)
 void Guide::Search_owner(string buf)
 {
 	fstream stream(PATH, ios::in);
+	if (!stream)
+	{
+		throw logic_error("Не удалось открыть файл\n");
+	}
 
 	while (!stream.eof())
 	{
@@ -91,6 +103,10 @@ void Guide::Search_owner(string buf)
 void Guide::Search_phone(string buf)
 {
 	fstream stream(PATH, ios::in);
+	if (!stream)
+	{
+		throw logic_error("Не удалось открыть файл\n");
+	}
 
 	while (!stream.eof())
 	{
@@ -115,6 +131,10 @@ void Guide::Search_phone(string buf)
 void Guide::Search_activity(string buf)
 {
 	fstream stream(PATH, ios::in);
+	if (!stream)
+	{
+		throw logic_error("Не удалось открыть файл\n");
+	}
 
 	while (!stream.eof())
 	{

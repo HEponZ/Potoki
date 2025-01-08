@@ -16,8 +16,8 @@ private:
 	string address;
 	string activity;
 public:
-	Guide() : Guide("\0", "\0", "\0", "\0", "\0") {}
-	Guide(string firm_name_S, string owner_S, string phone_S, string address_S, string activity_S) : firm_name{ firm_name_S }, owner{ owner_S }, phone{ phone_S }, address{ address_S }, activity{ activity_S } {}
+	Guide() noexcept : Guide("\0", "\0", "\0", "\0", "\0") {}
+	Guide(string firm_name_S, string owner_S, string phone_S, string address_S, string activity_S) noexcept : firm_name{ firm_name_S }, owner{ owner_S }, phone{ phone_S }, address{ address_S }, activity{ activity_S } {}
 
 	void Add();
 	void print();
